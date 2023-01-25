@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <style>
         .content {
             background-color:rgb(247, 245, 245);
@@ -23,127 +26,63 @@
             padding:5% 10%;
             background-color:white;
         }
-
-        #boardList {text-align:center;}
-        #boardList>tbody>tr:hover {cursor:pointer;}
-
-        #pagingArea {width:fit-content; margin:auto;}
-        
-        #searchForm {
-            width:80%;
-            margin:auto;
-        }
-        #searchForm>* {
-            float:left;
-            margin:5px;
-        }
-        .select {width:20%;}
-        .text {width:53%;}
-        .searchBtn {width:20%;}
     </style>
 </head>
 <body>
     
+    <!-- 메뉴바 -->
     <jsp:include page="" />
 
     <div class="content">
         <br><br>
-        <div class="innerOuter" style="padding:5% 10%;">
-            <h2>게시판</h2>
-            <br>
-            <!-- 로그인 후 상태일 경우만 보여지는 글쓰기 버튼 -->
-            <a class="btn btn-secondary" style="float:right;" href="">글쓰기</a>
-            <br>
-            <br>
-            <table id="boardList" class="table table-hover" align="center">
-                <thead>
-                    <tr>
-                        <th>글번호</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>조회수</th>
-                        <th>작성일</th>
-                        <th>첨부파일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>5</td>
-                        <td>마지막 공지사항제목</td>
-                        <td>admin</td>
-                        <td>10</td>
-                        <td>2020-02-10</td>
-                        <td>★</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>네번째 공지사항제목</td>
-                        <td>admin</td>
-                        <td>10</td>
-                        <td>2020-02-07</td>
-                        <td>★</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>세번째 공지사항제목</td>
-                        <td>admin</td>
-                        <td>10</td>
-                        <td>2020-02-03</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>두번째 공지사항제목</td>
-                        <td>admin</td>
-                        <td>100</td>
-                        <td>2020-02-01</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>첫번째 공지사항제목</td>
-                        <td>admin</td>
-                        <td>45</td>
-                        <td>2019-12-25</td>
-                        <td>★</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="innerOuter">
+            <h2>회원가입</h2>
             <br>
 
-            <div id="pagingArea">
-                <ul class="pagination">
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="userId">* ID : </label>
+                    <input type="text" class="form-control" id="userId" placeholder="Please Enter ID" name="" required> <br>
 
-            <br clear="both"><br>
+                    <label for="userPwd">* Password : </label>
+                    <input type="password" class="form-control" id="userPwd" placeholder="Please Enter Password" name="" required> <br>
 
-            <form id="searchForm" action="" method="get" align="center">
-                <div class="select">
-                    <select class="custom-select" name="condition">
-                        <option value="writer">작성자</option>
-                        <option value="title">제목</option>
-                        <option value="content">내용</option>
-                    </select>
+                    <label for="checkPwd">* Password Check : </label>
+                    <input type="password" class="form-control" id="checkPwd" placeholder="Please Enter Password" required> <br>
+
+                    <label for="userName">* Name : </label>
+                    <input type="text" class="form-control" id="userName" placeholder="Please Enter Name" name="" required> <br>
+
+                    <label for="email"> &nbsp; Email : </label>
+                    <input type="text" class="form-control" id="email" placeholder="Please Enter Email" name=""> <br>
+
+                    <label for="age"> &nbsp; Age : </label>
+                    <input type="number" class="form-control" id="age" placeholder="Please Enter Age" name=""> <br>
+
+                    <label for="phone"> &nbsp; Phone : </label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Please Enter Phone (-없이)" name=""> <br>
+                    
+                    <label for="address"> &nbsp; Address : </label>
+                    <input type="text" class="form-control" id="address" placeholder="Please Enter Address" name=""> <br>
+                    
+                    <label for=""> &nbsp; Gender : </label> &nbsp;&nbsp;
+                    <input type="radio" id="Male" value="M" name="" checked>
+                    <label for="Male">남자</label> &nbsp;&nbsp;
+                    <input type="radio" id="Female" value="F" name="">
+                    <label for="Female">여자</label> &nbsp;&nbsp;
+                </div> 
+                <br>
+                <div class="btns" align="center">
+                    <button type="submit" class="btn btn-primary">회원가입</button>
+                    <button type="reset" class="btn btn-danger">초기화</button>
                 </div>
-                <div class="text">
-                    <input type="text" class="form-control" name="keyword">
-                </div>
-                <button type="submit" class="searchBtn btn btn-secondary">검색</button>
             </form>
-            <br><br>
         </div>
         <br><br>
 
     </div>
 
+    <!-- 푸터바 -->
     <jsp:include page="" />
 
 </body>
